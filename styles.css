@@ -12,6 +12,7 @@ body {
     margin: 3em auto;    
     border-radius: 1em;
     padding: 2em;
+    
 }
 .button {
     background-color: #795230;
@@ -19,4 +20,10 @@ body {
     padding: .5em 1em;
     border: none;
     border-radius: 1em;
+}
+.header{
+    text-align: center;
+}
+.image {
+ width: 10em;
 }

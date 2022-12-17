@@ -4,14 +4,14 @@ $id=$_GET['updateid'];
 $sql="Select * from `info` where id=$id";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
-date_default_timezone_set("Philippines/Manila");
+date_default_timezone_set("Asia/Manila");
 $date=$row['date'];
 $time=$row['time'];
 $content=$row['content'];
 if(isset($_POST['submit'])){
     date_default_timezone_set("Philippines/Manila");    
     $date=date('d-m-y');
-    $time=date('h:i:s');
+    $time=date('h:i:a');
     $content=$_POST['content'];    
 
     $sql="update `info` set id='$id',date='$date',time='$time',content='$content' where id=$id";

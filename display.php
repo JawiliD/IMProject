@@ -13,7 +13,11 @@ include 'connect.php';
     </head>
     <body>
         <div class="container">
-            <button class="button my-5"><a href="user.php" class="text-light">Write your thoughts</a></button>
+            <div class="header">
+                <h1 class="text-light">Welcome to my E-Journal</h1>
+                <img class="image" src="journal.gif">
+                <button class="button my-5"><a href="user.php" class="text-light">Write your thoughts</a></button>
+            </div>         
             <table class="table">
             <thead class="thead-dark">
                 <tr>

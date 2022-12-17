@@ -1,9 +1,9 @@
 <?php
 include 'connect.php';
 if(isset($_POST['submit'])){ 
-    date_default_timezone_set("Philippines/Manila");   
+    date_default_timezone_set("Asia/Manila");   
     $date=date('d-m-y');
-    $time=date('h:i:s');
+    $time=date('h:i:a');
     $content=$_POST['content'];   
 
     $sql="insert into `info` (date,time,content) values('$date','$time','$content')";
@@ -31,8 +31,8 @@ if(isset($_POST['submit'])){
   </head>
   <body>
    <div class="container my-5">
-    <h1>Today is <?php echo date("l Y/m/d") ?></h1> 
-    <h3>The time is <?php echo date('h:ia') ?></h3>
+    <h1>Today is <?php date_default_timezone_set("Asia/Manila"); echo date("l Y/m/d") ?></h1> 
+    <h3>The time is <?php echo date('h:ia') ?></h3>    
     <form method="post"> 
     <div class="form-group">
         <h3>How are you today?</h3>        
