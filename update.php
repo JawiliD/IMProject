@@ -4,17 +4,17 @@ $id=$_GET['updateid'];
 $sql="Select * from `info` where id=$id";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
-$name=$row['name'];
-$email=$row['email'];
-$mobile=$row['mobile'];
-$password=$row['password'];
-if(isset($_POST['submit'])){    
-    $name=$_POST['name'];
-    $email=$_POST['email'];
-    $mobile=$_POST['mobile'];
-    $password=$_POST['password'];
+date_default_timezone_set("Philippines/Manila");
+$date=$row['date'];
+$time=$row['time'];
+$content=$row['content'];
+if(isset($_POST['submit'])){
+    date_default_timezone_set("Philippines/Manila");    
+    $date=date('d-m-y');
+    $time=date('h:i:s');
+    $content=$_POST['content'];    
 
-    $sql="update `info` set id='$id',name='$name',email='$email',mobile='$mobile',password='$password' where id=$id";
+    $sql="update `info` set id='$id',date='$date',time='$time',content='$content' where id=$id";
     $result=mysqli_query($con,$sql);
     if($result){        
         header('location:display.php');
@@ -33,29 +33,21 @@ if(isset($_POST['submit'])){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 
     <title>IM Project</title>
   </head>
   <body>
    <div class="container my-5">
+   <h1>Today is <?php echo date("l Y/m/d") ?></h1> 
+    <h3>The time is <?php echo date('h:i:a') ?></h3>
     <form method="post">
     <div class="form-group">
-        <label>Name</label>
-        <input type="text" class="form-control" placeholder="Enter your name" name="name" autocomplete="off" value=<?php echo $name ?>>        
+    <h3>How are you today?</h3> 
+        <textarea type="text" class="form-control" placeholder="Enter your thoughts" name="content" autocomplete="off"><?php echo $content?></textarea>        
     </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input type="email" class="form-control" placeholder="Enter your email" name="email" autocomplete="off" value=<?php echo $email ?>>        
-    </div>
-    <div class="form-group">
-        <label>Mobile</label>
-        <input type="text" class="form-control" placeholder="Enter your mobile" name="mobile" autocomplete="off" value=<?php echo $mobile ?>>        
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" placeholder="Enter your password" name="password" autocomplete="off" value=<?php echo $password ?>>        
-    </div>   
-    <button type="submit" class="btn btn-primary" name="submit">Update</button>
+  
+    <button type="submit" class="button" name="submit">Update</button>
     </form>
     </div>    
   </body>
