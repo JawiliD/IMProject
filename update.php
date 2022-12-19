@@ -14,7 +14,7 @@ if(isset($_POST['submit'])){
     $time=date('h:i:a');
     $content=$_POST['content'];    
 
-    $sql="update `info` set id='$id',date='$date',time='$time',content='$content' where id=$id";
+    $sql="update `info` set journal_id='$id',date='$date',time='$time',content='$content' where id=$id";
     $result=mysqli_query($con,$sql);
     if($result){        
         header('location:display.php');

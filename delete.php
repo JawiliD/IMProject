@@ -3,7 +3,7 @@ include 'connect.php';
 if(isset($_GET['deleteid'])){
     $id=$_GET['deleteid'];
 
-    $sql="delete from `info` where id=$id";
+    $sql="delete from `info` where journal_id=$id";
     $result=mysqli_query($con,$sql);
     if($result){
         header('location:display.php');

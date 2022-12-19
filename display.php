@@ -13,6 +13,7 @@ include 'connect.php';
     </head>
     <body>
         <div class="container">
+        <a class="logout" href="logout.php">Logout</a>
             <div class="header">
                 <h1 class="text-light">Welcome to my E-Journal</h1>
                 <img class="image" src="journal.gif">
@@ -30,11 +31,12 @@ include 'connect.php';
             </thead>
             <tbody>
                 <?php
+                
                 $sql="Select * from `info`";
                 $result=mysqli_query($con,$sql);
                 if($result){
                     while($row=mysqli_fetch_assoc($result)){
-                        $id=$row['id'];
+                        $id=$row['journal_id'];
                         $date=$row['date'];
                         $time=$row['time'];
                         $content=$row['content'];                       
