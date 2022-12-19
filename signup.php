@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>SIGN UP</title>
-	<link rel="stylesheet" type="text/css" href="login/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
      <form action="signup-check.php" method="post">
@@ -51,7 +51,7 @@
                  placeholder="Re_Password"><br>
 
      	<button type="submit">Sign Up</button>
-          <a href="index.php" class="ca">Already have an account?</a>
+          <a href="index.php" class="ca">Login</a>
      </form>
 </body>
 </html>
