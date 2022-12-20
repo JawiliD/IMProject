@@ -37,11 +37,11 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['user_id'] = $row['user_id'];
-				$sql="Select * from `users`";
-				$result=mysqli_query($conn,$sql);
-				$row=mysqli_fetch_assoc($result);
-				$userid=$row['user_id'];
-            	header("Location: display.php?userid='.$userid.");
+				// $sql="Select * from `users`";
+				// $result=mysqli_query($conn,$sql);
+				// $row=mysqli_fetch_assoc($result);
+				// $userid=$row['user_id'];
+            	header("Location: display.php");
 		        exit();
             }else{
 				header("Location: index.php?error=Incorect User name or password");
