@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 $id=$_GET['updateid'];
-$sql="Select * from `info` where id=$id";
+$sql="Select * from `info` where journal_id=$id";
 $result=mysqli_query($con,$sql);
 $row=mysqli_fetch_assoc($result);
 date_default_timezone_set("Asia/Manila");
@@ -9,12 +9,12 @@ $date=$row['date'];
 $time=$row['time'];
 $content=$row['content'];
 if(isset($_POST['submit'])){
-    date_default_timezone_set("Philippines/Manila");    
+    date_default_timezone_set("Asia/Manila");    
     $date=date('d-m-y');
     $time=date('h:i:a');
     $content=$_POST['content'];    
 
-    $sql="update `info` set journal_id='$id',date='$date',time='$time',content='$content' where id=$id";
+    $sql="update `info` set journal_id='$id',date='$date',time='$time',content='$content' where journal_id=$id";
     $result=mysqli_query($con,$sql);
     if($result){        
         header('location:display.php');

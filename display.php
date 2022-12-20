@@ -32,10 +32,15 @@ include 'connect.php';
             <tbody>
                 <?php
                 
-                $sql="Select * from `info`";
+                
+                // $sql="SELECT info.journal_id,info.date,info.time,info.content FROM users ,info
+                // WHERE  info.user_id =users.user_id";
+                $sql="SELECT * from info;";
+                
                 $result=mysqli_query($con,$sql);
+                
                 if($result){
-                    while($row=mysqli_fetch_assoc($result)){
+                    while($row=mysqli_fetch_assoc($result)){                        
                         $id=$row['journal_id'];
                         $date=$row['date'];
                         $time=$row['time'];
